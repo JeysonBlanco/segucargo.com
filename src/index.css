@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Archia';
+  src: url('https://uploads-ssl.webflow.com/5e2520252e290c852ed89624/5e252025f2aac3b4f4888284_Archia-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Archia';
+  src: url('https://uploads-ssl.webflow.com/5e2520252e290c852ed89624/5e252025f2aac37c4c888285_Archia-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Mobile optimizations */
+@layer base {
+  html {
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  body {
+    @apply antialiased;
+  }
+}
+
+@layer components {
+  .touch-feedback {
+    @apply active:scale-95 transition-transform duration-150;
+  }
+  
+  .mobile-safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
+
+/* Better form elements on mobile */
+@layer utilities {
+  .mobile-select {
+    @apply appearance-none bg-white;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+    background-position: right 0.5rem center;
+    background-repeat: no-repeat;
+    background-size: 1.5em 1.5em;
+  }
+
+  .mobile-input {
+    @apply rounded-lg border-gray-300 shadow-sm;
+    -webkit-appearance: none;
+  }
+}
